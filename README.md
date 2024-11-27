@@ -3,28 +3,43 @@
 이 프로젝트는 Django와 Django REST framework를 사용하여 간단한 To-Do 관리 REST API를 구현한 예제입니다.
 
 ## 프로젝트 구조
+
 template/
-├── myproject/          # Django 프로젝트 디렉토리
-│   ├── __init__.py
-│   ├── asgi.py         # 비동기 서버 게이트웨이 인터페이스 (ASGI) 설정
-│   ├── settings.py     # Django 프로젝트 설정 파일
-│   ├── urls.py         # 프로젝트 전체 URL 설정
-│   ├── wsgi.py         # 웹 서버 게이트웨이 인터페이스 (WSGI) 설정
-├── todo/               # Django 앱 디렉토리 (To-Do 앱)
-│   ├── __init__.py
-│   ├── admin.py        # 관리자 페이지에 To-Do 모델 등록 설정
-│   ├── apps.py         # To-Do 앱의 설정 클래스 정의
-│   ├── models.py       # To-Do 모델 정의
-│   ├── serializers.py  # To-Do 시리얼라이저 정의
-│   ├── tests.py        # To-Do 앱의 테스트 코드
-│   ├── urls.py         # To-Do API 엔드포인트 정의
-│   ├── views.py        # To-Do API 뷰 정의
-├── db.sqlite3          # SQLite 데이터베이스 파일
-└── manage.py           # Django 프로젝트 관리 스크립트
-.gitlab-ci.yml          # GitLab CI/CD 설정 파일
-Dockerfile              # Docker 이미지 빌드를 위한 설정 파일
-README.md               # 프로젝트 설명 파일
-requirements.txt        # 필요한 패키지 목록 파일
+├── myproject/               # Django 프로젝트 디렉토리
+│   ├── __init__.py          # 프로젝트 패키지 초기화 파일
+│   ├── asgi.py              # 비동기 서버 게이트웨이 인터페이스 (ASGI) 설정
+│   ├── settings.py          # Django 프로젝트 설정 파일
+│   ├── urls.py              # 프로젝트 전체 URL 설정
+│   ├── wsgi.py              # 웹 서버 게이트웨이 인터페이스 (WSGI) 설정
+│   ├── static/              # 정적 파일 디렉토리 (CSS, JS, 이미지 등)
+│   └── templates/           # HTML 템플릿 파일 디렉토리
+│       └── base.html        # 공통 템플릿 파일 (header, footer 포함)
+│
+├── todo/                    # Django 앱 디렉토리 (To-Do 앱)
+│   ├── __init__.py          # 앱 패키지 초기화 파일
+│   ├── admin.py             # 관리자 페이지에서 To-Do 모델 등록 설정
+│   ├── apps.py              # To-Do 앱 설정 클래스 정의
+│   ├── migrations/          # 데이터베이스 마이그레이션 디렉토리
+│   │   ├── __init__.py      # 마이그레이션 패키지 초기화 파일
+│   │   └── 0001_initial.py  # 초기 마이그레이션 파일 (예시)
+│   ├── models.py            # To-Do 모델 정의
+│   ├── serializers.py       # To-Do 시리얼라이저 정의 (DRF 사용시)
+│   ├── forms.py             # To-Do 폼 정의 (폼을 사용할 경우)
+│   ├── signals.py           # 신호(signal) 처리 함수 정의 (옵션)
+│   ├── tests.py             # To-Do 앱의 테스트 코드
+│   ├── urls.py              # To-Do 관련 URL 라우터 정의
+│   ├── views.py             # To-Do 앱의 뷰 정의
+│   └── templates/           # To-Do 관련 HTML 템플릿 디렉토리
+│       └── todo_list.html   # 예. To-Do 리스트 화면용 템플릿 파일
+│
+├── db.sqlite3               # 기본 SQLite 데이터베이스 파일
+├── manage.py                # Django 프로젝트 관리 스크립트
+├── .gitlab-ci.yml           # GitLab CI/CD 설정 파일
+├── Dockerfile               # Docker 이미지 빌드를 위한 설정 파일
+├── README.md                # 프로젝트 설명 파일 (Markdown 형식)
+├── requirements.txt         # 프로젝트에 필요한 패키지 목록 파일
+└── .env                     # 환경 변수 파일 (예: 비밀키, DB 정보 설정)
+
 
 ### 주요 파일 설명
 - `myproject/settings.py`: Django 프로젝트의 기본 설정을 포함하고 있습니다.
