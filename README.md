@@ -4,6 +4,9 @@
 
 ## 프로젝트 구조
 
+# 프로젝트 디렉토리 구조
+
+```plaintext
 template/
 ├── myproject/               # Django 프로젝트 디렉토리
 │   ├── __init__.py          # 프로젝트 패키지 초기화 파일
