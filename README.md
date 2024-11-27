@@ -42,7 +42,7 @@ template/
 ├── README.md                # 프로젝트 설명 파일 (Markdown 형식)
 ├── requirements.txt         # 프로젝트에 필요한 패키지 목록 파일
 └── .env                     # 환경 변수 파일 (예: 비밀키, DB 정보 설정)
-
+```
 
 ### 주요 파일 설명
 - `myproject/settings.py`: Django 프로젝트의 기본 설정을 포함하고 있습니다.
